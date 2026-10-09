@@ -1,0 +1,23 @@
+{
+  "release": "G12R4.2_GITHUB_PAGES_READY",
+  "scientific_data_modified": false,
+  "reference_counts": {
+    "all_pre2018": 777,
+    "recent": 312,
+    "high": 131,
+    "veryhigh": 48,
+    "older": 465,
+    "eval_only": 11
+  },
+  "files_sha256": {
+    "dashboard.js": "fc12d154393784a935fb3f18501bbdaa6723f5b012455fb4561675677a75e324",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "README.md": "9984b2823f19e69dd18273f5cd098e18f7da8d957913236261e32b309d843565",
+    "index.html": "f47d2b291232425453f566fb155066760110f4849e4b00be651e5baca807e5c3",
+    "styles.css": "f4ab2aa55411afc3a29d21d6492cecc2c27d6869299a3fa36c82b2e8b1aaa248",
+    "G12R3_Scientific_Report.md": "af934c8e89c4726c8736950e06ef8fd3d782f7ee6e18245f84dda472f0ebade6",
+    "evidence_display_points.geojson": "a107eb1adac64f76a886ff72246579dc228490650befaeffa78d75f1fa757406",
+    "historical_evidence_cells_300m.geojson": "a821416d6571d6431b08ca52a35fc58247a9e74d1af28bbfe4b967542edd1f9d",
+    "methods.html": "c29a1ca9b40d211b44eceaefe795e175f37360e3978907d0537d6c5ac2d0a42e"
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#122338"><meta name="description" content="Bayelsa documented spill recurrence: scientific methods, provenance and limitations. Built by Gabriel Bahago Samuel."><title>Methods &amp; Limitations | Bayelsa Evidence Atlas</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./styles.css"></head><body class="methods-page"><header class="topbar methods-header"><a class="identity" href="./index.html"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span><span class="identity-text"><strong>BAYELSA / EVIDENCE ATLAS</strong><small>SCIENTIFIC METHODS &amp; SOURCE DISCLOSURES</small></span></a><a class="method-back" href="./index.html">← Return to interactive map</a></header><div class="methods-shell"><section class="methods-hero"><div class="eyebrow"><span class="eyebrow-line"></span> ABOUT THE RESEARCH</div><h1>Documented spill recurrence,<br>explained with transparency.</h1><p>Bayelsa State, Nigeria · Retrospective 2006–2018 evidence · Historical spill reporting and contextual environmental layers, not field-verified contamination or spill probabilities.</p><div class="hero-credit"><span class="avatar" aria-hidden="true">GS</span><div><span>RESEARCH, CARTOGRAPHY &amp; DASHBOARD BY</span><strong>Gabriel Bahago Samuel</strong></div></div></section><div class="methods-content"><nav class="toc" aria-label="On this page"><strong>ON THIS PAGE</strong><a href="#author">About the author</a><a href="#m1">Purpose and scientific position</a><a href="#m2">Validated source counts</a><a href="#m3">Descriptive 2018 recurrence evidence</a><a href="#m4">Machine-learning comparison and limitations</a><a href="#m5">Contextual population, built area, and historic water</a><a href="#m6">Cartographic changes at R3</a><a href="#m7">Data and attribution</a><a href="#m8">Scientific restrictions</a><a href="#m9">Publication gate</a></nav><div class="methods-body"><section id="author" class="method-section"><h2>About the author</h2><div class="author-card"><h3>Gabriel Bahago Samuel</h3><p><strong>GIS Analyst · Geospatial modelling &amp; spatial decision support</strong></p><p>Research design, GIS analysis, cartography, data visualization and interactive dashboard development for this Bayelsa oil-spill recurrence portfolio project.</p></div><p>This portfolio demonstrates how spatial evidence and honest model comparisons can support retrospective screening without overstating what historical reporting can predict.</p></section><section class="method-section" id="m1"><h2>Purpose and scientific position</h2>
+<p>Provide exploratory, spatially explicit evidence of documented oil-spill recurrence and contextual receptors in Bayelsa State, Nigeria. The primary analysis concerns reports and their recurrence, <strong>not physical spill probability, field-measured contamination or causal attribution</strong>.</p>
+</section><section class="method-section" id="m2"><h2>Validated source counts</h2>
+<ul>
+<li>3,109 documented events in 2006–2018 on 107,133 model cells (nominal 300 m).</li>
+<li>3,078 of these events are pre-2018; 2018 has 31 recorded events in 29 positive cells.</li>
+<li>The 2018 recurrence classes use ONLY 2017-and-earlier incidents. Observed 2018 labels appear exclusively in independent evaluation summaries.</li>
+</ul>
+</section><section class="method-section" id="m3"><h2>Descriptive 2018 recurrence evidence</h2>
+<ul>
+<li>Cells with at least one recorded event during 2015–2017: <strong>312</strong>, representing <strong>0.291%</strong> of model cells.</li>
+<li>These cells contained <strong>14 of 31</strong> documented 2018 events (<strong>45.2%</strong>). This does not demonstrate reliable performance at new, previously unrecorded locations.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Recurrence class</th>
+<th style="text-align:right">Model cells</th>
+<th style="text-align:right">2018 documented events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4+ events in 2015-17</td>
+<td style="text-align:right">48</td>
+<td style="text-align:right">7</td>
+</tr>
+<tr>
+<td>2-3 events in 2015-17</td>
+<td style="text-align:right">83</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td>1 event in 2015-17</td>
+<td style="text-align:right">181</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>Older history only</td>
+<td style="text-align:right">465</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>No prior recorded spill</td>
+<td style="text-align:right">106,356</td>
+<td style="text-align:right">12</td>
+</tr>
+</tbody>
+</table>
+</section><section class="method-section" id="m4"><h2>Machine-learning comparison and limitations</h2>
+<ul>
+<li>Rolling 2016–2018 holdout AP: logistic ML <strong>0.189978</strong>; simple recent-three-year count <strong>0.241718</strong>.</li>
+<li>The simple recurrence benchmark outperformed ML. Novel-location discrimination was weak. The scores must not be interpreted as calibrated physical spill probabilities.</li>
+<li>Validation was rolling annual using strictly earlier history, rather than a three-year 2015-frozen forecast. Discrete count ties make exact top-k screening thresholds ambiguous.</li>
+</ul>
+</section><section class="method-section" id="m5"><h2>Contextual population, built area, and historic water</h2>
+<ul>
+<li>WorldPop 2018 modelled population: approximately 2,040,673 in the source-supported allocated cells; 104,718/107,133 cells supported.</li>
+<li>GHSL 2015 reconstructed built surface: 38,279,288 m² approximate allocated total; 106,838/107,133 cells supported.</li>
+<li>WorldPop and GHSL estimates use native-grid pixel-centre allocation and have boundary and modelling uncertainty. These are NOT numbers of people or structures affected by spills.</li>
+<li>GHSL 2015 represents an R2023A historical reconstruction, not a contemporaneous published 2015 layer. JRC 2015–2017 surface-water occurrence does not reveal oil pollution.</li>
+</ul>
+</section><section class="method-section" id="m6"><h2>Cartographic changes at R3</h2>
+<ul>
+<li>Five A3 landscape maps (PNG and PDF). Occurrence and recurrence maps use scaled point symbols at computational-cell centres and two count-density-selected insets. Marker sizes are symbolic, not physical spill extent.</li>
+<li>Population and built-area maps use log-scaled positive-value displays capped at the 99th percentile for visualization only. Underlying data remain unchanged. Missing coverage is separate from a valid zero.</li>
+<li>Include UTM coordinate frame, north arrow, scale bar, scientific disclaimer, and map-specific attribution. Insets are labelled A and B without asserting unverified named settlements.</li>
+</ul>
+</section><section class="method-section" id="m7"><h2>Data and attribution</h2>
+<ul>
+<li>Accepted NOSDRA documented spill records (2006–2018); accepted HDX Bayelsa boundary; 300 m model grid.</li>
+<li>Satellite and ancillary sources from locked earlier processing: JRC Global Surface Water, Landsat, CHIRPS, NASADEM.</li>
+<li>WorldPop GP 2018; JRC GHSL GHS-BUILT-S R2023A (2015 reconstructed epoch).</li>
+<li>Model and audit: G10C.2, G11, G11B. This R3 reads checksum-verified G12 R2 results and does not retrain or recompute the scientific baseline.</li>
+</ul>
+</section><section class="method-section" id="m8"><h2>Scientific restrictions</h2>
+<ul>
+<li>Unknown/unreported spills are not observable zeros. No confirmed spatial contaminated extent, remediation cost, direct damage or health exposure is mapped.</li>
+<li>No oil-infrastructure presence/absence model can be claimed. Infrastructure coverage was deemed insufficient for historical backtesting.</li>
+<li>Do not label maps as oil-spill probability or confirmed environmental contamination. Descriptive screening should guide field verification, not substitute for it.</li>
+<li>Web preview is local and depends on MapLibre CDN and OSM tiles; it is not hosted or externally verified.</li>
+</ul>
+</section><section class="method-section" id="m9"><h2>Publication gate</h2>
+<p>The G12 R3 scientific report and final cartography passed review. This G12 R4 web interface is a presentation refinement and still requires local browser interaction testing and explicit approval before public deployment.</p>
+<p>Source cartography: <code>G12R3_FINAL_CARTOGRAPHY_20261009</code>. Web presentation: <code>G12R4_PREMIUM_PRESENTATION_20261009</code></p>
+</section></div></div></div><footer class="page-footer"><span>Scientific interpretation must remain tied to documented reports and stated uncertainties.</span><span>© 2026 <strong>Gabriel Bahago Samuel</strong> · <a href="./index.html">Explore atlas</a></span></footer></body></html>

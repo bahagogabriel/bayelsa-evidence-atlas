@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111e30">
+  <meta name="description" content="Explore audited 2006–2018 documented oil-spill recurrence in Bayelsa State, Nigeria. A geospatial project by Gabriel Bahago Samuel.">
+  <title>Bayelsa | Documented Spill Recurrence — Interactive Evidence Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" defer></script>
+  <script src="./dashboard.js" defer></script>
+</head>
+<body class="dashboard">
+  <header class="topbar">
+    <a href="./index.html" class="identity" aria-label="Bayelsa Evidence Atlas home">
+      <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="identity-text"><strong>BAYELSA <span class="muted-bar">/</span> EVIDENCE ATLAS</strong><small>OIL-SPILL RECURRENCE · NIGERIA</small></span>
+    </a>
+    <div class="top-actions"><span class="topbar-pill"><span class="live-dot"></span> RETROSPECTIVE ANALYSIS</span><a class="top-link" href="./methods.html">Methods &amp; limitations <span aria-hidden="true">↗</span></a></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Map controls and project summary">
+      <div class="sidebar-inner">
+        <div class="eyebrow"><span class="eyebrow-line"></span> GEOSPATIAL DECISION SUPPORT · 2006–2018</div>
+        <h1>Where do recorded oil spills <em>recur?</em></h1>
+        <p class="lead">Explore documented spill history in Bayelsa, with evidence available before 2018 kept separate from the 2018 evaluation records.</p>
+
+        <div class="metrics">
+          <div class="metric metric-wide"><span class="metric-label">DOCUMENTED EVENTS · 2006–2018</span><div class="metric-value">3,109 <span class="metric-sub">records</span></div></div>
+          <div class="metric"><span class="metric-label">RECENT-HISTORY CELLS</span><div class="metric-value">312</div><div class="metric-caption">Spills in 2015–17</div></div>
+          <div class="metric"><span class="metric-label">FIRST SEEN IN 2018</span><div class="metric-value">11 <span class="metric-sub">cells</span></div><div class="metric-caption">12 events · evaluation only</div></div>
+        </div>
+
+        <div class="section-title"><span>EXPLORE THE EVIDENCE</span><span class="section-rule"></span></div>
+        <label class="field-label" for="filter">Show on map</label>
+        <select id="filter" aria-describedby="filter-info">
+          <option value="all">All recorded before 2018 (777)</option>
+          <option value="recent">At least 1 event in 2015–17 (312)</option>
+          <option value="high">At least 2 events in 2015–17 (131)</option>
+          <option value="veryhigh">4+ events in 2015–17 (48)</option>
+          <option value="older">Older history only (465)</option>
+          <option value="novel">First recorded in 2018 (11) · evaluation</option>
+        </select>
+        <div class="selection-summary" aria-live="polite"><span class="selection-icon" aria-hidden="true">◉</span><div><strong id="filter-summary-title">777 historically recorded cells</strong><span id="filter-summary-description">Recorded before 2018; excludes first-recorded 2018 locations.</span></div></div>
+        <p id="filter-info" class="microcopy">Select a class, then click a coloured symbol for its recorded event history.</p>
+
+        <div class="section-title legend-title"><span>EVIDENCE LEGEND</span><span class="section-rule"></span></div>
+        <div class="legend" aria-label="Recurrence evidence classes">
+          <div class="legend-item"><span class="legend-swatch old"></span><span>Older history only <small>Before 2015</small></span><b>465</b></div>
+          <div class="legend-item"><span class="legend-swatch one"></span><span>1 recent event <small>2015–17</small></span><b>181</b></div>
+          <div class="legend-item"><span class="legend-swatch two"></span><span>2–3 recent events <small>2015–17</small></span><b>83</b></div>
+          <div class="legend-item"><span class="legend-swatch four"></span><span>4+ recent events <small>2015–17</small></span><b>48</b></div>
+          <div class="legend-item legend-eval"><span class="legend-swatch novel"></span><span>First recorded in 2018 <small>Evaluation only</small></span><b>11</b></div>
+        </div>
+
+        <div class="finding"><div class="finding-overline">KEY RETROSPECTIVE FINDING</div><div class="finding-number">45.2<span>%</span></div><p>14 of 31 documented 2018 events occurred in cells with at least one recorded event in 2015–2017.</p><small>This is recurrence concentration, not validated future spill probability.</small></div>
+        <p class="disclaimer">Enlarged map symbols mark <strong>300 m modelling cells</strong>, not contamination extent. Unreported spills are unknown; contextual population and built area do not measure affected people.</p>
+        <div class="sidebar-foot"><a href="./methods.html" class="method-link">Read the methodology <span aria-hidden="true">↗</span></a><span>Designed &amp; developed by<br><strong>Gabriel Bahago Samuel</strong></span></div>
+      </div>
+    </aside>
+
+    <main class="map-area" aria-label="Interactive spill recurrence map">
+      <div id="map" role="application" aria-label="Map of documented Bayelsa spill recurrence"></div>
+      <div class="map-head" aria-live="polite"><div class="map-head-label"><span class="map-head-dot"></span> MAP VIEW</div><strong id="map-title">Historical occurrence · pre-2018</strong><span id="map-subtitle">Evidence cells • enlarged for visibility</span></div>
+      <div class="map-tools"><button id="focus-btn" type="button" title="Fit the selected evidence on the map">⌖ <span>Focus evidence</span></button></div>
+      <div class="map-guide"><span class="map-guide-marker"></span><span><strong>Coloured symbols = evidence cells</strong><br>Circles are cartographic markers, not spill footprints. Zoom in to see their actual 300 m units.</span></div>
+      <div id="map-status" class="map-status" role="status" aria-live="polite">Loading map and evidence…</div>
+    </main>
+  </div>
+  <footer class="page-footer"><span>Accepted NOSDRA reports · HDX administrative context · WGS84 visual display</span><span><strong>Bayelsa Evidence Atlas</strong> © 2026 Gabriel Bahago Samuel · <a href="./methods.html">Sources &amp; limitations</a></span></footer>
+</body>
+</html>
