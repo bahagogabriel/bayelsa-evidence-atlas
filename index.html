@@ -4,73 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111e30">
-  <meta name="description" content="Explore audited 2006–2018 documented oil-spill recurrence in Bayelsa State, Nigeria. A geospatial project by Gabriel Bahago Samuel.">
-  <title>Bayelsa | Documented Spill Recurrence — Interactive Evidence Atlas</title>
+  <meta name="description" content="Bayelsa Oil-Spill Evidence Atlas: see where documented spills were reported repeatedly during 2006–2018, what the historical records show, and what still needs field verification.">
+  <title>Bayelsa Oil-Spill Evidence Atlas | Historical Recurrence 2006–2018</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet">
+  <link href="./styles.css?v=20261010-story1" rel="stylesheet">
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" defer></script>
-  <script src="./dashboard.js" defer></script>
+  <script src="./dashboard.js?v=20261010-story1" defer></script>
 </head>
 <body class="dashboard">
   <header class="topbar">
-    <a href="./index.html" class="identity" aria-label="Bayelsa Evidence Atlas home">
+    <a href="./index.html" class="identity" aria-label="Bayelsa Oil-Spill Evidence Atlas home">
       <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
-      <span class="identity-text"><strong>BAYELSA <span class="muted-bar">/</span> EVIDENCE ATLAS</strong><small>OIL-SPILL RECURRENCE · NIGERIA</small></span>
+      <span class="identity-text"><strong>BAYELSA <span class="muted-bar">/</span> OIL-SPILL EVIDENCE ATLAS</strong><small>HISTORICAL SPILL REPORTS · NIGERIA</small></span>
     </a>
     <div class="top-actions"><span class="topbar-pill"><span class="live-dot"></span> RETROSPECTIVE ANALYSIS</span><a class="top-link" href="./methods.html">Methods &amp; limitations <span aria-hidden="true">↗</span></a></div>
   </header>
+  <section class="study-guide" aria-labelledby="study-guide-title">
+    <div class="study-guide-intro">
+      <p class="study-guide-kicker">BAYELSA STATE, NIGERIA · 2006–2018</p>
+      <h1 id="study-guide-title">Where have oil spills been reported repeatedly?</h1>
+      <p>Oil spills can threaten land and waterways. We examined documented spill reports across Bayelsa to see where events were recorded more than once, and what that history might tell investigators.</p>
+      <a href="#explore-map" class="study-guide-link">Explore the interactive map <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="study-guide-steps" aria-label="Understand the study in four steps">
+      <article><span>01 · WHAT WE STUDIED</span><p><strong>3,109 documented events</strong> from 2006–2018, organized into small map cells to examine recorded history.</p></article>
+      <article><span>02 · WHY WE STUDIED IT</span><p>Repeated reports may help identify places where further investigation and record-checking are worthwhile.</p></article>
+      <article><span>03 · WHAT WE FOUND</span><p><strong>14 of 31</strong> documented 2018 events occurred in cells with reports during 2015–2017.</p></article>
+      <article><span>04 · WHAT IT HELPS US DO</span><p>Explore historical patterns and guide follow-up checks, <strong>not predict future spills or prove contamination</strong>.</p></article>
+    </div>
+  </section>
   <div class="layout">
     <aside class="sidebar" aria-label="Map controls and project summary">
       <div class="sidebar-inner">
         <div class="eyebrow"><span class="eyebrow-line"></span> GEOSPATIAL DECISION SUPPORT · 2006–2018</div>
-        <h1>Where do recorded oil spills <em>recur?</em></h1>
-        <p class="lead">Explore documented spill history in Bayelsa, with evidence available before 2018 kept separate from the 2018 evaluation records.</p>
+        <h2 class="sidebar-explore-title">Explore the <em>spill history</em></h2>
+        <p class="lead">Choose a historical group, then select a coloured dot to see how many reports were recorded in that location. The 2018 evaluation records remain separate.</p>
 
         <div class="metrics">
-          <div class="metric metric-wide"><span class="metric-label">DOCUMENTED EVENTS · 2006–2018</span><div class="metric-value">3,109 <span class="metric-sub">records</span></div></div>
-          <div class="metric"><span class="metric-label">RECENT-HISTORY CELLS</span><div class="metric-value">312</div><div class="metric-caption">Spills in 2015–17</div></div>
-          <div class="metric"><span class="metric-label">FIRST SEEN IN 2018</span><div class="metric-value">11 <span class="metric-sub">cells</span></div><div class="metric-caption">12 events · evaluation only</div></div>
+          <div class="metric metric-wide"><span class="metric-label">DOCUMENTED SPILL EVENTS · 2006–2018</span><div class="metric-value">3,109 <span class="metric-sub">records</span></div></div>
+          <div class="metric"><span class="metric-label">PLACES WITH RECENT RECORDED HISTORY</span><div class="metric-value">312</div><div class="metric-caption">Map cells with reports in 2015–17</div></div>
+          <div class="metric"><span class="metric-label">NEWLY RECORDED IN 2018</span><div class="metric-value">11 <span class="metric-sub">cells</span></div><div class="metric-caption">12 reported events · held apart for evaluation</div></div>
         </div>
 
         <div class="section-title"><span>EXPLORE THE EVIDENCE</span><span class="section-rule"></span></div>
         <label class="field-label" for="filter">Show on map</label>
         <select id="filter" aria-describedby="filter-info">
-          <option value="all">All recorded before 2018 (777)</option>
-          <option value="recent">At least 1 event in 2015–17 (312)</option>
-          <option value="high">At least 2 events in 2015–17 (131)</option>
-          <option value="veryhigh">4+ events in 2015–17 (48)</option>
-          <option value="older">Older history only (465)</option>
+          <option value="all">All locations with records before 2018 (777)</option>
+          <option value="recent">At least 1 recorded event in 2015–17 (312)</option>
+          <option value="high">At least 2 recorded events in 2015–17 (131)</option>
+          <option value="veryhigh">4 or more recorded events in 2015–17 (48)</option>
+          <option value="older">Only older recorded history (465)</option>
           <option value="novel">First recorded in 2018 (11) · evaluation</option>
         </select>
         <div class="selection-summary" aria-live="polite"><span class="selection-icon" aria-hidden="true">◉</span><div><strong id="filter-summary-title">777 historically recorded cells</strong><span id="filter-summary-description">Recorded before 2018; excludes first-recorded 2018 locations.</span></div></div>
         <p id="filter-info" class="microcopy">Select a class, then click a coloured symbol for its recorded event history.</p>
 
-        <div class="section-title legend-title"><span>EVIDENCE LEGEND</span><span class="section-rule"></span></div>
+        <div class="section-title legend-title"><span>WHAT THE DOT COLOURS MEAN</span><span class="section-rule"></span></div>
+        <p class="legend-explainer">Each colour describes the <strong>recorded spill history</strong> of a small study area, not the amount of pollution there.</p>
         <div class="legend" aria-label="Recurrence evidence classes">
-          <div class="legend-item"><span class="legend-swatch old"></span><span>Older history only <small>Before 2015</small></span><b>465</b></div>
-          <div class="legend-item"><span class="legend-swatch one"></span><span>1 recent event <small>2015–17</small></span><b>181</b></div>
-          <div class="legend-item"><span class="legend-swatch two"></span><span>2–3 recent events <small>2015–17</small></span><b>83</b></div>
-          <div class="legend-item"><span class="legend-swatch four"></span><span>4+ recent events <small>2015–17</small></span><b>48</b></div>
-          <div class="legend-item legend-eval"><span class="legend-swatch novel"></span><span>First recorded in 2018 <small>Evaluation only</small></span><b>11</b></div>
+          <div class="legend-item"><span class="legend-swatch old"></span><span>Older records only <small>Before 2015; none recorded in 2015–17</small></span><b>465</b></div>
+          <div class="legend-item"><span class="legend-swatch one"></span><span>One recorded event <small>2015–17</small></span><b>181</b></div>
+          <div class="legend-item"><span class="legend-swatch two"></span><span>Two or three recorded events <small>2015–17</small></span><b>83</b></div>
+          <div class="legend-item"><span class="legend-swatch four"></span><span>Four or more recorded events <small>2015–17</small></span><b>48</b></div>
+          <div class="legend-item legend-eval"><span class="legend-swatch novel"></span><span>First recorded in 2018 <small>Separate evaluation records, not ranked</small></span><b>11</b></div>
         </div>
 
-        <div class="finding"><div class="finding-overline">KEY RETROSPECTIVE FINDING</div><div class="finding-number">45.2<span>%</span></div><p>14 of 31 documented 2018 events occurred in cells with at least one recorded event in 2015–2017.</p><small>This is recurrence concentration, not validated future spill probability.</small></div>
-        <p class="disclaimer">Enlarged map symbols mark <strong>300 m modelling cells</strong>, not contamination extent. Unreported spills are unknown; contextual population and built area do not measure affected people.</p>
+        <div class="finding"><div class="finding-overline">KEY RETROSPECTIVE FINDING</div><div class="finding-number">45.2<span>%</span></div><p>14 of the 31 documented events in 2018 occurred in small areas where spills had also been recorded during 2015–2017.</p><small>This describes past records. It cannot reliably predict where a new spill will happen.</small></div>
+        <p class="disclaimer"><strong>Important:</strong> Dots are made larger so you can see them. They represent roughly <strong>300-metre study cells</strong>, not the size of any spill or contaminated area. Unreported spills remain unknown; nearby population and buildings do not indicate measured harm.</p>
         <div class="sidebar-foot"><a href="./methods.html" class="method-link">Read the methodology <span aria-hidden="true">↗</span></a><span>Designed &amp; developed by<br><strong>Gabriel Bahago Samuel</strong></span></div>
       </div>
     </aside>
 
-    <main class="map-area" aria-label="Interactive spill recurrence map">
+    <main id="explore-map" class="map-area" aria-label="Interactive map of historically reported oil spills">
       <div id="map" role="application" aria-label="Map of documented Bayelsa spill recurrence"></div>
-      <div class="map-head" aria-live="polite"><div class="map-head-label"><span class="map-head-dot"></span> MAP VIEW</div><strong id="map-title">Historical occurrence · pre-2018</strong><span id="map-subtitle">Evidence cells • enlarged for visibility</span></div>
+      <div class="map-head" aria-live="polite"><div class="map-head-label"><span class="map-head-dot"></span> MAP VIEW</div><strong id="map-title">Historical reports before 2018</strong><span id="map-subtitle">Areas with documented history · symbols enlarged for visibility</span></div>
       <div class="map-tools"><button id="focus-btn" type="button" title="Fit the selected evidence on the map">⌖ <span>Focus evidence</span></button></div>
-      <div class="map-guide"><span class="map-guide-marker"></span><span><strong>Coloured symbols = evidence cells</strong><br>Circles are cartographic markers, not spill footprints. Zoom in to see their actual 300 m units.</span></div>
+      <div class="map-guide"><span class="map-guide-marker"></span><span><strong>Each coloured circle marks a small study area</strong><br>Its colour represents recorded history, not spill size or contamination. Zoom in to view the actual 300 m cells.</span></div>
       <div id="map-status" class="map-status" role="status" aria-live="polite">Loading map and evidence…</div>
     </main>
   </div>
-  <footer class="page-footer"><span>Accepted NOSDRA reports · HDX administrative context · WGS84 visual display</span><span><strong>Bayelsa Evidence Atlas</strong> © 2026 Gabriel Bahago Samuel · <a href="./methods.html">Sources &amp; limitations</a></span></footer>
+  <footer class="page-footer"><span>Accepted NOSDRA reports · HDX administrative context · WGS84 visual display</span><span><strong>Bayelsa Oil-Spill Evidence Atlas</strong> © 2026 Gabriel Bahago Samuel · <a href="./methods.html">Sources &amp; limitations</a></span></footer>
 </body>
 </html>
