@@ -34,3 +34,11 @@ body.methods-page{background:#f3f6f8;min-height:100%;height:auto}.methods-header
 @media(max-width:1080px){.study-guide{grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);gap:20px;padding:21px}.study-guide h1{font-size:28px}.study-guide-steps p{font-size:11px}.layout{min-height:590px}}
 @media(max-width:760px){.study-guide{grid-template-columns:1fr;gap:16px;padding:25px 20px 22px}.study-guide h1{font-size:31px}.study-guide-intro>p:not(.study-guide-kicker){font-size:13px}.study-guide-steps{gap:8px}.study-guide-steps article{padding:10px}.layout{height:auto;min-height:0}.sidebar .sidebar-explore-title{font-size:24px}.identity-text strong{font-size:11px;letter-spacing:.015em;white-space:normal}.identity-text small{font-size:8px;letter-spacing:.04em}}
 @media(max-width:420px){.study-guide-steps{grid-template-columns:1fr}.study-guide h1{font-size:29px}.topbar{gap:8px}.identity{gap:8px}.top-link{font-size:10px}}
+
+/* Historical data-period disclosure: short, visible and legible on every screen. */
+.study-period-note{grid-column:1/-1;background:#e8f3f0;color:#2c5255;border-left:3px solid #14877f;border-radius:6px;padding:10px 14px;font-size:11.5px;line-height:1.65}
+.study-period-note strong{font-weight:800;color:#163a40}
+.study-period-note a{font-weight:800;color:#087971;text-underline-offset:2px;white-space:normal}
+.study-period-note a:hover{color:#064e49}
+.methods-body #study-period{scroll-margin-top:110px}
+@media(max-width:760px){.study-period-note{padding:11px 13px;font-size:12px}}
